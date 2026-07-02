@@ -24,6 +24,7 @@ export class TodoItem {
     this.done = props.done ?? false;
     this.priority = props.priority ?? "mid";
     this.dueDate = props.dueDate ?? null;
+    // 未指定時はエポック(1970)を既定にしてテストの決定性を保つ。実アプリでは生成時刻を渡す。
     this.createdAt = props.createdAt ?? new Date(0);
   }
 
@@ -48,6 +49,7 @@ export class TodoItem {
         return 2;
       case "low":
         return 1;
+      // union 型を守れば通常到達しない防御分岐。100%/branch を敢えて残し「常に100%を目指す必要はない」ことを学ぶ余地にしている。
       default:
         return 0;
     }

@@ -17,7 +17,7 @@ describe("解答例: Storage (依存を spy で差し替え)", () => {
     new Storage(p).save(store);
 
     expect(saveSpy).toHaveBeenCalledTimes(1);
-    const raw = saveSpy.mock.calls[0][0];
+    const raw = saveSpy.mock.calls[0]![0];
     expect(JSON.parse(raw)).toHaveLength(1);
   });
 
@@ -29,7 +29,7 @@ describe("解答例: Storage (依存を spy で差し替え)", () => {
 
     new Storage(p).save(store);
 
-    const saved = JSON.parse(saveSpy.mock.calls[0][0]);
+    const saved = JSON.parse(saveSpy.mock.calls[0]![0]);
     expect(saved[0].dueDate).toBeNull();
   });
 
@@ -41,7 +41,7 @@ describe("解答例: Storage (依存を spy で差し替え)", () => {
 
     new Storage(p).save(store);
 
-    const saved = JSON.parse(saveSpy.mock.calls[0][0]);
+    const saved = JSON.parse(saveSpy.mock.calls[0]![0]);
     expect(saved[0].dueDate).toBe("2024-06-01T00:00:00.000Z");
   });
 
