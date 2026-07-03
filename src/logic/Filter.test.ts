@@ -1,9 +1,13 @@
 import { describe, it } from "vitest";
 import { Filter } from "./Filter";
 
+// テスト観点のヒント（具体的なケースは自分で考えて洗い出そう）:
+//   - 正常系: 期待どおりの入力で正しい結果になるか
+//   - 異常系: エラーや throw になる入力はあるか
+//   - 境界値: 0件・1件 など「境目」
+//   - 特殊値: 完了済み / 未完了が混ざったリスト など
+// 進め方: 本体 (Filter.ts) を読み、`just cov` の赤い行・分岐を手がかりに、
+//         観点ごとの it(...) を自分で起こそう。書き方の見本は TodoItem.test.ts。
 describe("Filter", () => {
-  // ここに it(...) を書いてカバレッジ％を上げよう（見本は TodoItem.test.ts）
-  it.todo("all で全件返る");
-  it.todo("active で未完了のみ返る");
-  it.todo("completed で完了のみ返る");
+  it.todo("まずは最初のテストを書いてみよう（書けたらこの行は消す）");
 });

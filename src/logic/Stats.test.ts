@@ -1,10 +1,12 @@
 import { describe, it } from "vitest";
 import { Stats } from "./Stats";
 
+// テスト観点のヒント（具体的なケースは自分で考えて洗い出そう）:
+//   - 正常系: 期待どおりの集計結果になるか
+//   - 境界値: 0件（空リスト）・全件完了・全件未完了 など「境目」
+//   - 特殊値: 期限切れが混ざるとどうなるか
+// 進め方: 本体 (Stats.ts) を読み、`just cov` の赤い行・分岐を手がかりに、
+//         観点ごとの it(...) を自分で起こそう。書き方の見本は TodoItem.test.ts。
 describe("Stats", () => {
-  // ここに it(...) を書いてカバレッジ％を上げよう（見本は TodoItem.test.ts）
-  it.todo("空配列のとき completionRate は 0");
-  it.todo("2件中1件完了のとき completionRate は 0.5");
-  it.todo("remaining で未完了件数が返る");
-  it.todo("overdueCount で期限切れ件数が返る");
+  it.todo("まずは最初のテストを書いてみよう（書けたらこの行は消す）");
 });
